@@ -28,7 +28,6 @@ public class Controller {
 
         List<Url> urls = urlRepository.findAll().stream()
                 .collect(Collectors.toList());
-
         return urls;
     }
 
