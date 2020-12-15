@@ -1,14 +1,14 @@
-Server:
-  prot: 8080
-Spring:
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
   kafka:
-#    consumer:
-#      bootstrap-servers: localhost:9092
-#      group-id: "group_id"
-#      auto-offset-reset: earliest
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: localhost:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            add:
+              type:
+                headers: false
